@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "devin-c65b4": {
+      "hosting": {
+        "app": [
+          "devin-c65b4"
+        ]
+      }
+    },
+    "savehayat-f1238": {
+      "hosting": {
+        "app": [
+          "savehayat-f1238"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "savehayat-f1238"
+  }
+}
