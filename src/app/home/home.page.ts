@@ -1,4 +1,3 @@
-import { AuthService } from './../services/auth.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,10 +8,6 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
   profile=null;
-  constructor(private authService: AuthService,
-    private router:Router) {}
-  logout(){
-    this.authService.logout();
-    this.router.navigateByUrl('/',{replaceUrl:true});
-  }
+  constructor() {}
+  
 }
