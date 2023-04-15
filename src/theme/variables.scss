@@ -2,9 +2,13 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&display=swap');
 :root {
+  $font-family-base: 'Merriweather Sans',sans-seriff;
+
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #ff1a1a ;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;

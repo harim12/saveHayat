@@ -1,0 +1,49 @@
+ion-content {
+    --background: var(--ion-color-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.logo{
+    width: 35%;
+    margin-top: 160px;
+}
+.btn{
+    margin-bottom: 20px;
+    border-radius: 5px;
+    height: 40px;
+    font-family: 'Merriweather Sans',sans-serif;
+    font-weight: 500;
+}
+.btn-signup{
+    background-color: white;
+    color: #ff1a1a;
+    margin-top: 200px;
+}
+.btn-login {
+    border: white 1.5px solid;
+    color: white;
+  }
+
+.title h2, .title p {
+    color: white;
+   font-family: 'Merriweather Sans',sans-serif;
+  }
+  .title h2{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .title p{
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 50;
+    font-style: italic;
+
+  }
+  
+  .btn-login{
+    height: 40px !important ;
+    border-radius: 20px;
+  }

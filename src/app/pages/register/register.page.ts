@@ -3,13 +3,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-register',
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
 })
-export class LoginPage implements OnInit {
-  
+export class RegisterPage implements OnInit {
+
   credentials:FormGroup;
 
   constructor(
@@ -35,18 +37,18 @@ export class LoginPage implements OnInit {
     })
   }
 
-  async login(){
+  async register(){
     const loading = await this.loadingController.create();
     await loading.present();
-    const user = await this.authService.login(this.credentials.value);
+    const user = await this.authService.register(this.credentials.value);
     await loading.dismiss();
     if(user){
-      this.router.navigate(['/home']);
+      this.router.navigateByUrl('/home',{replaceUrl:true});
     } else{
-      this.showAlert('Login failed','Please try again')
+      this.showAlert('Registration failed','Please try again')
     }
   }
-
+ 
   async showAlert(header,message){
     const alert = await this.alertController.create({
       header,

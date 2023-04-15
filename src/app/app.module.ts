@@ -12,7 +12,6 @@ import {provideAuth, getAuth} from '@angular/fire/auth';
 import {provideDatabase, getDatabase} from '@angular/fire/database';
 import {provideFirestore, getFirestore} from '@angular/fire/firestore';
 import {provideStorage, getStorage} from '@angular/fire/storage';
-import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 
 
 @NgModule({
@@ -21,7 +20,11 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
         BrowserModule,
         IonicModule.forRoot(),
         AppRoutingModule,
-        provideMessaging(() => getMessaging()),
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideAuth(() => getAuth()),
+        provideDatabase(() => getDatabase()),
+        provideFirestore(() => getFirestore()),
+        provideStorage(() => getStorage())
     ],
     providers: [
         {
