@@ -1,0 +1,26 @@
+<ion-router-outlet></ion-router-outlet>
+<ion-content>
+  <ion-tabs>
+    
+    <ion-fab vertical="bottom" horizontal="center" translucent="true">
+      <ion-fab-button routerLink="/tabs/donate" class="donate">
+      <ion-icon name="water-outline" class="blood-icon"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home-page" class="home">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="search">
+        <ion-icon name="search"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button></ion-tab-button>
+      <ion-tab-button tab="tabs/find-donors">
+        <ion-icon name="people-circle"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="profile">
+        <ion-icon name="person"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>
