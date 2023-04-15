@@ -43,7 +43,7 @@ export class RegisterPage implements OnInit {
     const user = await this.authService.register(this.credentials.value);
     await loading.dismiss();
     if(user){
-      this.router.navigateByUrl('/home',{replaceUrl:true});
+      this.router.navigateByUrl('/tabs',{replaceUrl:true});
     } else{
       this.showAlert('Registration failed','Please try again')
     }
