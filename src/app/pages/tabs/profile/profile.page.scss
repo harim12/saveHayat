@@ -3,6 +3,8 @@ ion-content{
     flex-direction: column;
     width: 100%;
     justify-content: center;
+  --background: #F5F5F5;
+
 }
 .top-part{
     display: flex;
@@ -100,18 +102,20 @@ p,h2{
     justify-content: center;
     align-items: center;
     color: black;
-    width: 90%;
+    width: 95%;
     margin: auto;
+    background:white;
     p{
         color:#393636;
     }
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 20px;
+    margin-top: 5px;
 }
 .detail{
     display: flex;
     background-color: red;
-    width: 100%;
+    width: 95%;
     margin-left: 10px;
     margin-top: 15px;
     background-color: white;
