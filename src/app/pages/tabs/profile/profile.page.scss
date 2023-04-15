@@ -1,0 +1,139 @@
+ion-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+.top-part{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--ion-color-primary);
+    margin-bottom: 10px !important;
+
+}
+p,h2{
+    font-family: 'Merriweather Sans',sans-serif;
+}
+.top-text{
+    color: white;
+}
+.img-profile{
+    width: 90px;
+    margin-left: 10px;
+    margin-right: 10px;
+    clip-path: circle();
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+    // margin-left: -30px;
+}
+.right-side{
+     width: 70%;
+    h2{
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    p{
+        font-size: 12px;
+        margin-top: -5px;
+        color: aliceblue;
+    }
+}
+
+.middle-part{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 86%;
+    margin: auto;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    p{
+        font-size: 13px;
+        color: #555;
+    }
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.img-middle{
+    width: 50px;
+}
+.number{
+    color: var(--ion-color-primary);
+    margin-bottom: -2px;
+}
+.blood{
+    width: 25px;
+}
+.hands{
+    width: 28px;
+}
+.available{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 99%;
+    margin-left: 40px;
+    margin-top: 5px;
+    color: #393636;
+    font-size: 15px;
+}
+.line{
+    width: 90%;
+    height: 0.1px;
+    background-color: rgb(172, 170, 170);
+    margin-left: 20px;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 90%;
+    margin: auto;
+    p{
+        color:#393636;
+    }
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 20px;
+}
+.detail{
+    display: flex;
+    background-color: red;
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 15px;
+    background-color: white;
+    border-bottom: 1px solid rgb(172, 170, 170);
+    
+}
+.icon{
+    margin-right: 20px;
+    margin-left: 12px;
+}
+ion-icon{
+    width: 25px;
+    height: 25px;
+    color: rgb(172, 170, 170);
+}
+.col-sep{
+    width: 1.5px;
+    height: 40px;
+    background-color: rgb(172, 170, 170);
+    margin-top: -5px;
+}
+.p-first{
+    color:rgb(172, 170, 170) !important ;
+    margin-bottom: 10px !important;
+}

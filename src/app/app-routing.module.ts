@@ -14,12 +14,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/first-page/first-page.module').then( m => m.FirstPagePageModule),
     // ...canActivate(redirectUnauthorizedToLogin)
   },
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
-    //  ...canActivate(redirectLoggedInToHome)
-
-  },
+ 
  
   {
     path: 'login',

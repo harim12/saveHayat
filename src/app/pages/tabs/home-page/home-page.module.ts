@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { HomePagePageRoutingModule } from './home-page-routing.module';
-import { SwiperModule } from 'swiper/angular';
 
 import { HomePagePage } from './home-page.page';
 
@@ -15,7 +14,7 @@ import { HomePagePage } from './home-page.page';
     FormsModule,
     IonicModule,
     HomePagePageRoutingModule,
-    SwiperModule
+    
   ],
   declarations: [HomePagePage],
 })
