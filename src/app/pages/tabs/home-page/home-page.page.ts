@@ -12,7 +12,7 @@ export class HomePagePage  {
 
   constructor(router:Router) { }
   redirectToFindDonors() {
-    this.router.navigate(['/tabs/find-donors']);
+    this.router.navigate(['../find-donors']);
   }
  
 
