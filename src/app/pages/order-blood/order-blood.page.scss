@@ -1,0 +1,180 @@
+ion-toolbar {
+    text-align: center;
+    font-family: 'Merriweather Sans', sans-serif;
+    --background: #F5F5F5;
+    position: relative;
+
+    ion-title {
+        font-weight: 700;
+    }
+
+    .back-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+
+        .arrow-back {
+
+            width: 30px;
+            height: 27px;
+            background: rgb(218, 218, 218);
+            border-radius: 5px;
+            padding: 2px;
+        }
+    }
+}
+
+ion-content {
+    --background: #F5F5F5;
+    font-family: 'Merriweather Sans', sans-serif;
+
+    ion-card{
+        box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+        padding: 10px;
+        margin-top: 30px;
+    }    
+    
+    .blood-requested-infos {
+        
+
+        ion-title {
+            padding: 0;
+            font-size: 20px;
+            font-family: 'Merriweather Sans', sans-serif;
+        color:rgb(37, 37, 37);
+
+            margin: 10px 0;
+        }
+
+        .blood-type-container,
+        .blood-sign-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+
+            span {
+                padding: 10px;
+                font-size: 18px;
+                cursor: pointer;
+                background: rgb(211, 211, 211);                
+                border-radius: 5px;
+                width: 50px;
+                text-align: center;
+                font-family: 'Merriweather Sans', sans-serif;
+            }
+
+            span.selected {
+                background-color: var(--ion-color-primary);
+                color: white;
+            }
+        }
+
+        .blood-sign-container {
+            justify-content: start;
+            padding-left: 8%;
+            gap: 9%;
+        }
+        .blood-choice{
+            margin: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            span{
+                ion-icon{
+                    color: var(--ion-color-primary);
+                    width: 25px;
+                    height: 25px;
+                    margin-bottom: -5px;
+                }
+            }
+        }
+
+    }
+    .personal-infos{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        ion-title{
+            color:rgb(37, 37, 37);
+            font-size: 20px;
+            font-family: 'Merriweather Sans', sans-serif;
+            margin: 10px 0;
+            padding: 0;
+        }
+        .full-name{
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            .first-name,.last-name{
+                ion-input{
+           margin-top: 6px;
+
+                }
+            }
+        }
+    }
+    .contact-infos {
+        font-family: 'Merriweather Sans', sans-serif;
+        display: block;
+        gap: 10px;
+        ion-input{
+           margin-top: 6px;
+           margin-bottom: 10px;
+        }
+        ion-label{
+            margin-top: 10px;
+        }
+
+    }
+    .location{
+        margin-bottom: 25px;
+        ion-title {
+            padding: 0;
+            font-size: 20px;
+            font-family: 'Merriweather Sans', sans-serif;
+        color:rgb(37, 37, 37);
+
+            margin: 10px 0;
+        }
+        ion-input{
+            margin-top: 6px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+ion-label {
+    font-family: 'Merriweather Sans', sans-serif;
+
+}
+
+ion-input{
+    font-family: 'Merriweather Sans', sans-serif;
+    --background: var(--background-color);
+    font-size: 17px;
+}
+
+.submit-btn{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+    gap: 15px;
+    ion-button{
+        text-transform: capitalize;
+        font-family: 'Merriweather Sans', sans-serif;
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+    .cancel-btn{
+        --background:rgb(175, 175, 175);
+    }
+    .cancel-btn:hover{
+        --background:rgb(124, 124, 124);
+
+    }
+}
+
+
+
+

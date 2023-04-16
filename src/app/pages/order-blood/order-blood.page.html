@@ -1,0 +1,90 @@
+<ion-toolbar>
+  <div class="back-container" >
+    <ion-icon name="arrow-back-outline" class="arrow-back" routerLink="../tabs/home-page"></ion-icon>
+    <ion-title>Blood Request</ion-title>
+  </div>
+</ion-toolbar>
+
+<ion-content>
+  <form action="">
+    <ion-card class="blood-requested-infos">
+      <ion-title>Choose Blood Group</ion-title>
+      <div class="blood-group">
+        <div class="blood-type-container">
+          <span *ngFor="let bloodType of bloodTypes"
+                [ngClass]="{ 'selected': bloodType === selectedbloodType }"
+                (click)="selectBloodType(bloodType)">
+            {{ bloodType }}
+          </span>
+        </div>
+        <div class="blood-sign-container">
+          <span *ngFor="let bloodSign of bloodSigns"
+                [ngClass]="{ 'selected': bloodSign === selectedbloodSign }"
+                (click)="selectBloodSign(bloodSign)">
+            {{ bloodSign }}
+          </span>
+        </div>
+       <div class="blood-choice"><span>Blood Group : </span>
+        <span *ngIf="selectedBloodGroup != '' && selectedBloodGroup != ('undefined' + selectedbloodSign)  && selectedBloodGroup !== (selectedbloodType + 'undefined')">
+          <ion-icon name="water"></ion-icon> {{selectedBloodGroup}}
+      </span>
+      </div>
+      </div>
+      <div class="amount-blood">
+        <ion-title>Amount of blood required</ion-title>
+        <ion-input type="number" placeholder="Enter your age"></ion-input>
+      </div>
+     <div class="date-request">
+      <ion-title>Date of the request</ion-title>
+      <ion-input type="date" placeholder="Enter the date" class="date-input"></ion-input>
+     </div>
+    </ion-card>
+    <ion-card class="personal-infos">
+      <ion-title>Personal informations</ion-title>
+     <div class="full-name">
+      <div class="first-name">
+      <ion-label>First Name</ion-label>
+      <ion-input type="text" placeholder="your first name"></ion-input>
+      </div>
+      <div class="last-name">
+        <ion-label>Last Name</ion-label>
+        <ion-input type="text" placeholder="your last name"></ion-input>
+        </div>
+     </div>
+     <div class="contact-infos">
+      <ion-label>Phone number</ion-label>
+      <ion-input type="number" placeholder="your phone number"></ion-input>
+      <ion-label >Email (Optinal)</ion-label>
+      <ion-input type="email" placeholder="your email"></ion-input>
+     </div>
+     <ion-list>
+      <ion-label>Gender :</ion-label>
+      <ion-radio-group>
+        <ion-item>
+          <ion-label>Homme</ion-label>
+          <ion-radio value="male"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Femme</ion-label>
+          <ion-radio value="female"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    
+    </ion-card>
+    <ion-card class="location">
+      <ion-title>Hospital center | Location infos</ion-title>
+      <ion-label>Address</ion-label>
+      <ion-input type="text" placeholder="your address "></ion-input>
+      <ion-label>City</ion-label>
+      <ion-input type="text" placeholder="your city "></ion-input>
+    </ion-card>
+    <div class="submit-btn">
+      <ion-button routerLink="../tabs/home-page" class="cancel-btn">Cancel</ion-button>
+      <ion-button type="submit">Request</ion-button>
+    </div>
+    
+  </form>
+
+</ion-content>

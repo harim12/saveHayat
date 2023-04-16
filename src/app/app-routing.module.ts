@@ -33,7 +33,11 @@ const routes: Routes = [
     path : 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m =>m.TabsPageModule )
 
+  },  {
+    path: 'order-blood',
+    loadChildren: () => import('./pages/order-blood/order-blood.module').then( m => m.OrderBloodPageModule)
   }
+
 
 
 
