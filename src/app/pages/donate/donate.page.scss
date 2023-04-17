@@ -55,8 +55,11 @@ ion-content {
         .title{
             position: absolute;
             top: 110px;
-            left: 55px;
+            left: 75px;
             color: var(--ion-color-primary);
+            font-size: 20px;
+            font-style: italic;
+
         }
     }
     .hero{
