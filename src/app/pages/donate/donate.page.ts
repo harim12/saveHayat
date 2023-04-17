@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-order-blood',
-  templateUrl: './order-blood.page.html',
-  styleUrls: ['./order-blood.page.scss'],
+  selector: 'app-donate',
+  templateUrl: './donate.page.html',
+  styleUrls: ['./donate.page.scss'],
 })
-export class OrderBloodPage implements OnInit {
+export class DonatePage implements OnInit {
+
   bloodTypes = ['A', 'B', 'O', 'AB'];
   selectedbloodType: string;
   bloodSigns = ['+', '-'];
@@ -35,4 +36,5 @@ export class OrderBloodPage implements OnInit {
   ngOnInit() {
   
 }
+
 }
