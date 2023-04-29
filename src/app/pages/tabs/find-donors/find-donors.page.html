@@ -4,149 +4,25 @@
 <ion-content>
   <ion-searchbar animated="true" placeholder="Search"></ion-searchbar>
   <div class="donors-list">
-    <ion-card>
+    <ion-card *ngFor="let donation of donations">
       <ion-card-content>
+        <!-- the image is still static I still need to make it dynamic -->
         <img src="../../../../assets/images/img-test.jpg" class="img-donor"/>
         <div class="content">
-          <h2>Yasin Hossain</h2>
+          <h2>{{donation.firstName}} {{donation.lastName}}</h2>
           <div class="donor-infos">
             <ion-icon name="location-outline" class="location-icon"></ion-icon>
-            <span>Mohamedpur,Marrakech</span>
+            <span>{{donation.hospitalAdress}} {{donation.hospitalCity}}</span>
           </div>
           <div class="donor-infos">
             <ion-icon name="call-outline" class="phone-icon"></ion-icon>
-            <span>+212650225074</span>
+            <span>{{donation.phoneNumber}}</span>
           </div>
         </div>
         <img src="../../../../assets/images/goutte2.png" class="goutte-sang"/>
-        <ion-label class="blood-type">B+</ion-label>
+        <ion-label class="blood-type">{{donation.bloodGroup}}</ion-label>
       </ion-card-content>
     </ion-card>
-    <ion-card>
-      <ion-card-content>
-        <img src="../../../../assets/images/Andrew.avif" class="img-donor"/>
-        <div class="content">
-          <h2>Yasin Hossain</h2>
-          <div class="donor-infos">
-            <ion-icon name="location-outline" class="location-icon"></ion-icon>
-            <span>Mohamedpur,Marrakech</span>
-          </div>
-          <div class="donor-infos">
-            <ion-icon name="call-outline" class="phone-icon"></ion-icon>
-            <span>+212650225074</span>
-          </div>
-        </div>
-        <img src="../../../../assets/images/goutte2.png" class="goutte-sang"/>
-        <ion-label class="blood-type">B+</ion-label>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-content>
-        <img src="../../../../assets/images/avatar.jpg" class="img-donor"/>
-        <div class="content">
-          <h2>Yasin Hossain</h2>
-          <div class="donor-infos">
-            <ion-icon name="location-outline" class="location-icon"></ion-icon>
-            <span>Mohamedpur,Marrakech</span>
-          </div>
-          <div class="donor-infos">
-            <ion-icon name="call-outline" class="phone-icon"></ion-icon>
-            <span>+212650225074</span>
-          </div>
-        </div>
-        <img src="../../../../assets/images/goutte2.png" class="goutte-sang"/>
-        <ion-label class="blood-type">B+</ion-label>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-content>
-        <img src="../../../../assets/images/ihssane.jpg" class="img-donor"/>
-        <div class="content">
-          <h2>Yasin Hossain</h2>
-          <div class="donor-infos">
-            <ion-icon name="location-outline" class="location-icon"></ion-icon>
-            <span>Mohamedpur,Marrakech</span>
-          </div>
-          <div class="donor-infos">
-            <ion-icon name="call-outline" class="phone-icon"></ion-icon>
-            <span>+212650225074</span>
-          </div>
-        </div>
-        <img src="../../../../assets/images/goutte2.png" class="goutte-sang"/>
-        <ion-label class="blood-type">B+</ion-label>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-content>
-        <img src="../../../../assets/images/avatar.jpg" class="img-donor"/>
-        <div class="content">
-          <h2>Yasin Hossain</h2>
-          <div class="donor-infos">
-            <ion-icon name="location-outline" class="location-icon"></ion-icon>
-            <span>Mohamedpur,Marrakech</span>
-          </div>
-          <div class="donor-infos">
-            <ion-icon name="call-outline" class="phone-icon"></ion-icon>
-            <span>+212650225074</span>
-          </div>
-        </div>
-        <img src="../../../../assets/images/goutte2.png" class="goutte-sang"/>
-        <ion-label class="blood-type">B+</ion-label>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-content>
-        <img src="../../../../assets/images/avatar.jpg" class="img-donor"/>
-        <div class="content">
-          <h2>Yasin Hossain</h2>
-          <div class="donor-infos">
-            <ion-icon name="location-outline" class="location-icon"></ion-icon>
-            <span>Mohamedpur,Marrakech</span>
-          </div>
-          <div class="donor-infos">
-            <ion-icon name="call-outline" class="phone-icon"></ion-icon>
-            <span>+212650225074</span>
-          </div>
-        </div>
-        <img src="../../../../assets/images/goutte2.png" class="goutte-sang"/>
-        <ion-label class="blood-type">B+</ion-label>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-content>
-        <img src="../../../../assets/images/avatar.jpg" class="img-donor"/>
-        <div class="content">
-          <h2>Yasin Hossain</h2>
-          <div class="donor-infos">
-            <ion-icon name="location-outline" class="location-icon"></ion-icon>
-            <span>Mohamedpur,Marrakech</span>
-          </div>
-          <div class="donor-infos">
-            <ion-icon name="call-outline" class="phone-icon"></ion-icon>
-            <span>+212650225074</span>
-          </div>
-        </div>
-        <img src="../../../../assets/images/goutte2.png" class="goutte-sang"/>
-        <ion-label class="blood-type">B+</ion-label>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-content>
-        <img src="../../../../assets/images/img-test.jpg" class="img-donor"/>
-        <div class="content">
-          <h2>Yasin Hossain</h2>
-          <div class="donor-infos">
-            <ion-icon name="location-outline" class="location-icon"></ion-icon>
-            <span>Mohamedpur,Marrakech</span>
-          </div>
-          <div class="donor-infos">
-            <ion-icon name="call-outline" class="phone-icon"></ion-icon>
-            <span>+212650225074</span>
-          </div>
-        </div>
-        <img src="../../../../assets/images/goutte2.png" class="goutte-sang"/>
-        <ion-label class="blood-type">B+</ion-label>
-      </ion-card-content>
-    </ion-card>
+      
   </div>
 </ion-content>

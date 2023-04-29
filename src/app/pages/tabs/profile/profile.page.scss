@@ -13,6 +13,7 @@ ion-content{
     align-items: center;
     background-color: var(--ion-color-primary);
     margin-bottom: 10px !important;
+    padding: 10px;
 
 }
 p,h2{
@@ -141,4 +142,38 @@ ion-icon{
 .p-first{
     color:rgb(172, 170, 170) !important ;
     margin-bottom: 10px !important;
+}
+
+.donations-bloodRequests{
+    .sec{
+        margin: 0;
+        padding: 0;
+        margin-left: 35px;
+        margin-right: 45px;
+        // padding-top: 1px;
+        cursor: pointer;
+       
+    }
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 10px;
+
+    .donations{
+        border-bottom: 1px solid rgb(172, 170, 170);
+
+    }
+
+   
+    .don{
+        padding-top: 5px;
+        padding-bottom: 0px;
+        
+    }
+    .req{
+        padding-bottom: 10px;
+    }
+    .text{
+        color: #393636;
+        font-size: 15px;
+    }
 }

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="back-container" >
+      <ion-icon name="arrow-back-outline" class="arrow-back" routerLink="../tabs/profile"></ion-icon>
+      <ion-title>My donations</ion-title>
+    </div>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="my-donations">
+    <ion-card *ngFor="let donation of donations">
+      <ion-card-content>
+        <div class="content">
+          <p>donated 1 unit to : </p>
+          <div class="donor-infos">
+            <ion-icon name="location-outline" class="location-icon"></ion-icon>
+            <span>{{donation.hospitalAdress}}</span>
+          </div>
+          <div class="donor-infos">
+            <ion-icon name="calendar-outline" class="location-icon"></ion-icon>
+            <span>{{donation.date}}</span>
+          </div>
+          <div class="donor-infos">
+            <ion-icon name="checkmark-outline" class="location-icon"></ion-icon>
+            <span>received by:</span>
+          </div>
+          <div class="donor-infos">
+            <ion-icon name="person-outline" class="phone-icon"></ion-icon>
+            <span>here goes the name of the receiver</span>
+          </div>
+        </div>
+        <img src="../../../../assets/images/goutte2.png" class="goutte-sang"/>
+        <ion-label class="blood-type">{{donation.bloodGroup}}</ion-label>
+      </ion-card-content>
+    </ion-card>
+    
+    
+  </div>
+</ion-content>

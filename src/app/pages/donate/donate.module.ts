@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { DonatePageRoutingModule } from './donate-routing.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { DonatePage } from './donate.page';
 
 @NgModule({
@@ -13,7 +13,9 @@ import { DonatePage } from './donate.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    DonatePageRoutingModule
+    DonatePageRoutingModule,
+    ReactiveFormsModule,
+    
   ],
   declarations: [DonatePage]
 })

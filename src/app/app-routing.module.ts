@@ -40,6 +40,10 @@ const routes: Routes = [
   {
     path: 'donate',
     loadChildren: () => import('./pages/donate/donate.module').then( m => m.DonatePageModule)
+  },
+  {
+    path: 'my-donations',
+    loadChildren: () => import('./pages/my-donations/my-donations.module').then( m => m.MyDonationsPageModule)
   }
 
 

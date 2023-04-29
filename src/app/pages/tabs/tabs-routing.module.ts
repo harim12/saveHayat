@@ -54,7 +54,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../tabs/find-donors/find-donors.module').then(m => m.FindDonorsPageModule)
+              import('./find-donors/find-donors.module').then(m => m.FindDonorsPageModule)
           }
         ]
       },

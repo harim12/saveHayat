@@ -1,0 +1,27 @@
+.top-section{
+    width: 100%;
+    height: 150px;
+    margin: auto;
+    background-color: var(--ion-color-primary);
+    position: relative;
+    margin-bottom: 110px !important;
+    display: flex;
+    flex-direction: column;
+    // flex-direction: start;
+}
+.search{
+    border-radius: 30px;
+    width: 96%;
+    margin-left: 4px;
+    // margin-top: -2px;
+
+}
+.title{
+    color: white;
+    // margin-bottom: -10px !important;
+    font-family: 'Merriweather Sans', sans-serif;
+    margin-left: 20px;
+    font-size: 25px;
+    
+    
+}
