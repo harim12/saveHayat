@@ -6,7 +6,7 @@
 </ion-toolbar>
 
 <ion-content>
-  <form action="">
+  <form [formGroup] = "bloodRequest"  (ngSubmit)="orderBlood()">
     <ion-card class="blood-requested-infos">
       <ion-title>Choose Blood Group</ion-title>
       <div class="blood-group">
@@ -28,38 +28,72 @@
         <span *ngIf="selectedBloodGroup != '' && selectedBloodGroup != ('undefined' + selectedbloodSign)  && selectedBloodGroup !== (selectedbloodType + 'undefined')">
           <ion-icon name="water"></ion-icon> {{selectedBloodGroup}}
       </span>
+      <br>
+      
+        <span class="error-message-span"  style="color: red;" *ngIf=" formSubmitted && bloodGroup.errors?.['invalidBloodGroup']">enter your blood group</span>
+     
       </div>
+      <br>
+      <ion-label style="font-size: 18px;">Enter the amount of blood</ion-label>
+      <ion-input type="string" placeholder="2 units (for example)" formControlName="amountOfBlood"
+      (blur)="amountOfBlood.markAsTouched(); amountOfBlood.markAsDirty()"></ion-input>
+    <span class="error-message-span" style="color: red;"
+      *ngIf="formSubmitted && amountOfBlood.invalid && amountOfBlood.errors?.['required']  ">
+      Please enter the amount of blood
+    </span>
+    <span class="error-message-span" style="color: red;"
+      *ngIf="formSubmitted  && lastName.invalid && amountOfBlood.errors?.['invalidBloodAmount'] && !amountOfBlood.errors?.['required']">
+      Please enter the amount of blood in the right format
+    </span>
+
       </div>
-      <div class="amount-blood">
-        <ion-title>Amount of blood required</ion-title>
-        <ion-input type="number" placeholder="enter the amount of blood required"></ion-input>
-      </div>
-     <div class="date-request">
-      <ion-title>Date of the request</ion-title>
-      <ion-input type="date" placeholder="Enter the date" class="date-input"></ion-input>
-     </div>
+      
+      <ion-input type="hidden" formControlName="bloodGroup" [(ngModel)]="selectedBloodGroup"></ion-input>
+
+      
+     
     </ion-card>
     <ion-card class="personal-infos">
       <ion-title>Personal informations</ion-title>
      <div class="full-name">
       <div class="first-name">
       <ion-label>First Name</ion-label>
-      <ion-input type="text" placeholder="your first name"></ion-input>
-      </div>
+      <ion-input type="text" placeholder="your first name" formControlName="firstName" 
+          (blur)="firstName.markAsTouched(); firstName.markAsDirty()"></ion-input>
+      <br>
+      <!-- <span style="color: red;" *ngIf="firstName.touched && firstName.invalid && firstName.errors?.['required']">Enter your first name</span> -->
+      <span class="error-message-span"  style="color: red;" *ngIf="formSubmitted && firstName.invalid && firstName.errors?.['required']">
+        enter your first name.
+     </span>
+    </div>
       <div class="last-name">
         <ion-label>Last Name</ion-label>
-        <ion-input type="text" placeholder="your last name"></ion-input>
+        <ion-input type="text" placeholder="your last name" formControlName="lastName"
+          (blur)="lastName.markAsTouched(); lastName.markAsDirty()"></ion-input>
+          <br>
+        <!-- <span style="color: red;" *ngIf="lastName.touched && lastName.invalid && lastName.errors?.['required']">Enter your last name</span> -->
+        <span class="error-message-span"  style="color: red;" *ngIf="formSubmitted && lastName.invalid && lastName.errors?.['required']">
+           enter your last name.
+        </span>
         </div>
      </div>
      <div class="contact-infos">
       <ion-label>Phone number</ion-label>
-      <ion-input type="number" placeholder="your phone number"></ion-input>
-      <ion-label >Email (Optional)</ion-label>
-      <ion-input type="email" placeholder="your email"></ion-input>
+      <ion-input type="number" placeholder="your phone number" formControlName="phoneNumber"></ion-input>
+      <span class="error-message-span" style="color: red;" *ngIf="formSubmitted && phoneNumber.invalid && phoneNumber.errors?.['required']">
+        enter your phone number.
+     </span>
+     <br>
+      <ion-label >date</ion-label>
+      <ion-input type="date"  formControlName="date"></ion-input>
+      <span class="error-message-span" style="color: red;" *ngIf="formSubmitted && date.invalid && date.errors?.['required']">
+        enter the date.
+     </span>
      </div>
-     <ion-list>
+
+     <ion-list >
       <ion-label>Gender :</ion-label>
-      <ion-radio-group>
+      <ion-radio-group formControlName="gender">
         <ion-item>
           <ion-label>Homme</ion-label>
           <ion-radio value="male"></ion-radio>
@@ -71,18 +105,31 @@
         </ion-item>
       </ion-radio-group>
     </ion-list>
-    
+    <span class="error-message-span"  style="color: red;" *ngIf="formSubmitted && gender.invalid && gender.errors?.['required']">enter you gender</span>
+
     </ion-card>
     <ion-card class="location">
       <ion-title>Hospital center | Location infos</ion-title>
       <ion-label>Address</ion-label>
-      <ion-input type="text" placeholder="your address "></ion-input>
+      <ion-input type="text" placeholder="your address " formControlName="hospitalAdress" 
+         (blur)="hospitalAdress.markAsTouched(); hospitalAdress.markAsDirty()"></ion-input>
+    
+        <!-- <span style="color: red;" *ngIf="hospitalAdress.touched && hospitalAdress.invalid && hospitalAdress.errors?.['required']">Enter the hospital adress</span> -->
+        <span class="error-message-span"  style="color: red;" *ngIf="formSubmitted && hospitalAdress.invalid && hospitalAdress.errors?.['required']">
+          enter your hospital adress.
+       </span>
+      <br>
       <ion-label>City</ion-label>
-      <ion-input type="text" placeholder="your city "></ion-input>
+      <ion-input type="text" placeholder="your city " formControlName="hospitalCity"
+      (blur)="hospitalCity.markAsTouched(); hospitalCity.markAsDirty()"></ion-input>
+      <!-- <span style="color: red;" *ngIf="hospitalCity.touched && hospitalCity.invalid && hospitalCity                                                                             .errors?.['required']">Enter the hospital city</span> -->
+      <span class="error-message-span"  style="color: red;" *ngIf="formSubmitted && hospitalCity.invalid && hospitalCity.errors?.['required']">
+        enter your hospital city.
+     </span>
     </ion-card>
     <div class="submit-btn">
-      <ion-button routerLink="../tabs/home-page" class="cancel-btn">Cancel</ion-button>
-      <ion-button type="submit">Request</ion-button>
+      <ion-button (click)="goBack()" class="cancel-btn">Cancel</ion-button>
+      <ion-button type="submit">Order</ion-button>
     </div>
     
   </form>

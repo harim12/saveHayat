@@ -1,4 +1,3 @@
-
 <div class="home-header" >
     <ion-toolbar >
       <ion-buttons slot="start">
@@ -58,68 +57,28 @@
   <ion-title>Donation Request</ion-title>
   
   <ion-grid class="requests">
-    <ion-row>
+    <ion-row *ngFor = "let bloodRequest of bloodRequests ">
       <ion-card class="donation-request">
      <ion-col size="8" class="colonne">
       <ion-label class="ion-text-start">Name</ion-label>
       <ion-text>
-        <h6>Amir Hamza</h6>
+        <h6>{{bloodRequest.firstName}}</h6>
       </ion-text>
       <ion-label>Location</ion-label>
       <ion-text>
-        <h6>Hertford British Hospital</h6>
+        <h6>{{bloodRequest.hospitalAdress}} {{bloodRequest.hospitalCity}}</h6>
       </ion-text>
-        <h6 >5 min ago</h6>
+        <h6 >{{bloodRequest.date}}</h6>
       </ion-col>
       <ion-col size="4">
         <ion-img class="goutte-sang" src="../../../../assets/images/goutte.png"></ion-img>
-        <ion-label class="blood-type">B+</ion-label>
+        <ion-label class="blood-type">{{bloodRequest.bloodGroup}}</ion-label>
         <ion-button >Donate</ion-button>
       </ion-col>
       </ion-card>
     </ion-row>
 
-    <ion-row>
-      <ion-card class="donation-request">
-     <ion-col size="8" class="colonne">
-      <ion-label class="ion-text-start">Name</ion-label>
-      <ion-text>
-        <h6>Amir Hamza</h6>
-      </ion-text>
-      <ion-label>Location</ion-label>
-      <ion-text>
-        <h6>Hertford British Hospital</h6>
-      </ion-text>
-        <h6 >5 min ago</h6>
-      </ion-col>
-      <ion-col size="4">
-        <ion-img class="goutte-sang" src="../../../../assets/images/goutte.png"></ion-img>
-        <ion-label class="blood-type">B+</ion-label>
-        <ion-button>Donate</ion-button>
-      </ion-col>
-      </ion-card>
-    </ion-row>
-
-    <ion-row>
-      <ion-card class="donation-request">
-     <ion-col size="8" class="colonne">
-      <ion-label class="ion-text-start">Name</ion-label>
-      <ion-text>
-        <h6>Amir Hamza</h6>
-      </ion-text>
-      <ion-label>Location</ion-label>
-      <ion-text>
-        <h6>Hertford British Hospital</h6>
-      </ion-text>
-        <h6 >5 min ago</h6>
-      </ion-col>
-      <ion-col size="4">
-        <ion-img class="goutte-sang" src="../../../../assets/images/goutte.png"></ion-img>
-        <ion-label class="blood-type">B+</ion-label>
-        <ion-button>Donate</ion-button>
-      </ion-col>
-      </ion-card>
-    </ion-row>
+    
   </ion-grid>
   
   
