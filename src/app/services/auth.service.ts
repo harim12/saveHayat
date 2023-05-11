@@ -40,7 +40,7 @@ export class AuthService {
     catch(e){
       return null;
     }
-  }
+  }s
   logout(){
     return signOut(this.auth)
   }

@@ -10,8 +10,8 @@ import {
 import {Router} from '@angular/router';
 import {BloodRequest} from 'src/app/models/bloodRequest.model';
 import {AuthService} from 'src/app/services/auth.service';
+import { Storage } from '@ionic/storage-angular';
 import {BloodRequestService} from 'src/app/services/blood-request.service';
-
 
 @Component({selector: 'app-home-page', templateUrl: './home-page.page.html', styleUrls: ['./home-page.page.scss']})
 
@@ -22,17 +22,23 @@ export class HomePagePage {
     userEmail : string | null;
     bloodRequests : BloodRequest[];
 
-    constructor(router : Router, private authService : AuthService, private bloodRequestService : BloodRequestService) {}
+    constructor(router : Router, 
+                private authService : AuthService,
+                private bloodRequestService : BloodRequestService,
+                private storage:Storage) {}
 
     redirectToFindDonors() {
         this.router.navigate(['../find-donors']);
     }
 
     async ngOnInit() { // Get the user's email when the component initializes
+        await this.storage.create();
         this.userEmail = await this.authService.getUserMail();
-        console.log(this.userEmail);
+        // Get the variable from storage
+        this.storage.get('email').then((val) => {
+            console.log(val)
+        });
         this.getBloodRequests();
-        console.log(this.bloodRequests)
     }
 
     // ===============FIND BLOOD REQUESTS IN THE SAME CITY===================
@@ -40,9 +46,12 @@ export class HomePagePage {
         const city = 'oujda'; // replace with desired city
 
         this.bloodRequestService.getBloodRequests(city).subscribe((bloodRequests : BloodRequest[]) => {
-            this.bloodRequests = bloodRequests;
-            console.log(bloodRequests); // print the result to the console for testing
+            this.bloodRequests = bloodRequests;     
+            console.log("this is inside the home page",this.bloodRequests)      
         });
+        
+        
     }
+
 
 }

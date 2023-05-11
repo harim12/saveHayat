@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { NotificationsPageRoutingModule } from './notifications-routing.module';
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 import { NotificationsPage } from './notifications.page';
 
@@ -13,7 +14,8 @@ import { NotificationsPage } from './notifications.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    NotificationsPageRoutingModule
+    NotificationsPageRoutingModule,
+    IonicStorageModule.forRoot()
   ],
   declarations: [NotificationsPage]
 })

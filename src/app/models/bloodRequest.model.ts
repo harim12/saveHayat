@@ -1,5 +1,6 @@
 export class BloodRequest{
     constructor(
+        public id :string,
         public bloodGroup:string,
         public amountOfBlood:string,
         public firstName:string,

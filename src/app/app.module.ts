@@ -14,6 +14,9 @@ import {provideFirestore, getFirestore} from '@angular/fire/firestore';
 import {provideStorage, getStorage} from '@angular/fire/storage';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FirestoreModule } from '@angular/fire/firestore';
+import { IonicStorageModule } from '@ionic/storage-angular';
+
+
 
 @NgModule({
     declarations: [AppComponent],
@@ -27,7 +30,9 @@ import { FirestoreModule } from '@angular/fire/firestore';
         provideAuth(() => getAuth()),
         provideDatabase(() => getDatabase()),
         provideFirestore(() => getFirestore()),
-        provideStorage(() => getStorage())
+        provideStorage(() => getStorage()),
+        IonicStorageModule.forRoot()
+
     ],
     providers: [
         {

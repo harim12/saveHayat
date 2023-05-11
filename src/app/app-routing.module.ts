@@ -33,7 +33,8 @@ const routes: Routes = [
     path : 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m =>m.TabsPageModule )
 
-  },  {
+  },
+  {
     path: 'order-blood',
     loadChildren: () => import('./pages/order-blood/order-blood.module').then( m => m.OrderBloodPageModule)
   },
@@ -44,6 +45,10 @@ const routes: Routes = [
   {
     path: 'my-donations',
     loadChildren: () => import('./pages/my-donations/my-donations.module').then( m => m.MyDonationsPageModule)
+  },
+  {
+    path:'notification',
+    loadChildren:()=> import('./pages/notifications/notifications.module').then(m=>m.NotificationsPageModule)
   }
 
 

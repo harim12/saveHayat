@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import {  addDoc, collection, query, where } from "firebase/firestore";
+import {  addDoc, collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore";
 import { Donation } from '../models/donation.model';
-import { Firestore, collectionData } from '@angular/fire/firestore';
+import { Firestore, collectionData,getDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
-
+ 
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +21,7 @@ export class DonationService {
   //================================= FIND DONORS ===============================================
    findDonors(city: string): Observable<Donation[]> {
     const collectionInstance = collection(this.firestore, 'donations');
-    const q = query(collectionInstance, where('hospitalCity', '==',city));
+    const q = query(collectionInstance, where('hospitalCity', '==',city), where('donateTo', '==', ''));
     return collectionData(q) as Observable<Donation[]>;
   }
     //================================= GET MY DONATIONS ===============================================
@@ -31,4 +31,18 @@ export class DonationService {
       const q = query(collectionInstance, where('userId', '==',userId));
       return collectionData(q) as Observable<Donation[]>;
     }
+    //==============================DELETE DONATION=============================
+    deleteDonation(donationId: string){
+      const collectionInstance = collection(this.firestore, 'donations');
+      const q = query(collectionInstance, where('id', '==', donationId));
+      return getDocs(q).then((querySnapshot) => {
+        const promises: Promise<void>[] = [];
+        querySnapshot.forEach((doc) => {
+          promises.push(deleteDoc(doc.ref));
+        });
+        return Promise.all(promises);
+      });
+    }
+    
+   
 }
