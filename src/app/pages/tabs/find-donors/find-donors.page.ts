@@ -28,4 +28,6 @@ export class FindDonorsPage implements OnInit {
       console.log(donations); // print the result to the console for testing
     });
  }
+
+
 }

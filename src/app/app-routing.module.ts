@@ -33,7 +33,8 @@ const routes: Routes = [
     path : 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m =>m.TabsPageModule )
 
-  },  {
+  },
+  {
     path: 'order-blood',
     loadChildren: () => import('./pages/order-blood/order-blood.module').then( m => m.OrderBloodPageModule)
   },
@@ -48,6 +49,10 @@ const routes: Routes = [
   {
     path: 'edit-profile',
     loadChildren: () => import('./pages/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+  },
+  {
+    path:'notification',
+    loadChildren:()=> import('./pages/notifications/notifications.module').then(m=>m.NotificationsPageModule)
   }
 
 

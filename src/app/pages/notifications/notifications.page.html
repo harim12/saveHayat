@@ -1,9 +1,36 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>notifications</ion-title>
+    <div class="back-container">
+      <ion-icon name="arrow-back-outline" class="arrow-back" (click)="goBack()"></ion-icon>
+      <ion-title>Notifications</ion-title>
+    </div>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
+  <div class="donors-list">
+    <ion-card *ngFor="let donation of donatedToMe">
+      <ion-card-content>
+        <!-- the image is still static I still need to make it dynamic -->
+        <img src="../../../../assets/images/img-test.jpg" class="img-donor" />
+        <div class="content">
+          <h2>{{donation.firstName}} {{donation.lastName}}</h2>
+          <div class="donor-infos">
+            <ion-icon name="location-outline" class="location-icon"></ion-icon>
+            <span>{{donation.hospitalAdress}} {{donation.hospitalCity}}</span>
+          </div>
+          <div class="donor-infos">
+            <ion-icon name="call-outline" class="phone-icon"></ion-icon>
+            <span>{{donation.phoneNumber}}</span>
+          </div>
+        </div>
+        <img src="../../../../assets/images/goutte2.png" class="goutte-sang" />
+        <ion-label class="blood-type">{{donation.bloodGroup}}</ion-label>
+        
+      </ion-card-content>
+      <ion-button class="acceptBtn" (click) = "acceptDonation(donation.id,donation.donateTo)">Accept </ion-button>
+    </ion-card>
 
+  </div>
 </ion-content>

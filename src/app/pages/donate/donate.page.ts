@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from 'src/app/services/auth.service';
 import {DonationService} from 'src/app/services/donation.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({selector: 'app-donate', templateUrl: './donate.page.html', styleUrls: ['./donate.page.scss']})
 export class DonatePage implements OnInit {
@@ -15,17 +16,29 @@ export class DonatePage implements OnInit {
     selectedBloodGroup : string;
     userEmail : string | null;
     formSubmitted = false;
-
-    constructor(private formBuilder : FormBuilder, private authService : AuthService, private donationService : DonationService, private router : Router) {}
+    donateTo:string;
+    constructor(private formBuilder : FormBuilder,private route:ActivatedRoute, private authService : AuthService, private donationService : DonationService, private router : Router) {}
 
     ngOnInit() {
+        this.initForm();
+        this.route.queryParams.subscribe(params=>{
+            this.donateTo = params['donateTo'];
+        })
+        console.log(this.donateTo)
+    }
+
+    initForm(){
         this.formSubmitted = false;
 
 
         this.donation = this.formBuilder.group({
+            id:[uuidv4()],
             bloodGroup: [
                 '',
                 [this.bloodGroupValidator]
+            ],
+            donateTo:[
+                ''
             ],
             firstName: [
                 '',
@@ -53,12 +66,15 @@ export class DonatePage implements OnInit {
         })
     }
 
-
     async donate() {
         this.formSubmitted = true;
 
         this.userEmail = await this.authService.getUserMail();
         this.donation.value.userId = this.userEmail;
+        console.log(this.donateTo)
+        if(this.donateTo!=undefined){
+            this.donation.value.donateTo = this.donateTo;
+        }
         console.log(this.donation.value)
 
         if (this.donation.valid) {

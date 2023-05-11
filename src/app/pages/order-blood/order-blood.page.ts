@@ -3,7 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { BloodRequestService } from 'src/app/services/blood-request.service';
-
+import { v4 as uuidv4 } from 'uuid';
 @Component({selector: 'app-order-blood', templateUrl: './order-blood.page.html', styleUrls: ['./order-blood.page.scss']})
 export class OrderBloodPage implements OnInit {
     bloodRequest : FormGroup;
@@ -23,6 +23,7 @@ export class OrderBloodPage implements OnInit {
 
     ngOnInit() {
         this.bloodRequest = this.formBuilder.group({
+            id:[uuidv4()],
             bloodGroup: [
                 '',
                 [this.bloodGroupValidator]
