@@ -6,7 +6,8 @@ export class User{
         public lastName?:string,
         public gender?: string,
         public bloodGroup?:string,
-        public dateOfBirth?:string,
-        public mobileNumber?:number
+        public dateBirth?:string,
+        public phoneNumber?:number,
+        public imageURL?:string
     ){}
 }

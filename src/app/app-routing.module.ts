@@ -44,6 +44,10 @@ const routes: Routes = [
   {
     path: 'my-donations',
     loadChildren: () => import('./pages/my-donations/my-donations.module').then( m => m.MyDonationsPageModule)
+  },
+  {
+    path: 'edit-profile',
+    loadChildren: () => import('./pages/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
   }
 
 

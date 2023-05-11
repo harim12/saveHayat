@@ -3,7 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +21,9 @@ export class RegisterPage implements OnInit {
     private loadingController:LoadingController,
     private alertController:AlertController,
     private authService:AuthService,
-    private router:Router
+    private router:Router,
+    private storage:Storage
+
   ) { }
 
   //Easy access for form fields
@@ -30,11 +34,15 @@ export class RegisterPage implements OnInit {
     return this.credentials.get('password');
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.credentials = this.fb.group({
       email:['',[Validators.required,Validators.email]],
-      password:['',[Validators.required,Validators.minLength(6)]]
+      password:['',[Validators.required,Validators.minLength(6)]],
+      firstName:['',Validators.required],
+      lastName:['',Validators.required]
     })
+    await this.storage.create();
+
   }
 
   async register(){
@@ -43,6 +51,11 @@ export class RegisterPage implements OnInit {
     const user = await this.authService.register(this.credentials.value);
     await loading.dismiss();
     if(user){
+      const firstName = this.credentials.value.firstName;
+      const lastName = this.credentials.value.lastName;
+      const email = this.credentials.value.email;
+      this.storage.set('email', this.credentials.value.email);
+      this.authService.addUser(firstName,lastName,email)
       this.router.navigateByUrl('/tabs',{replaceUrl:true});
     } else{
       this.showAlert('Registration failed','Please try again')

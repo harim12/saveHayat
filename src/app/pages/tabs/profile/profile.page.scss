@@ -6,6 +6,22 @@ ion-content{
   --background: #F5F5F5;
 
 }
+// .log-out{
+//     background: transparent;
+//     color: #393636;
+//     font-family: 'Merriweather Sans',sans-serif;
+//   padding: 5px;
+//   position: relative;
+//     ion-icon{
+//      color: rgb(255, 50, 50);
+//      width: 30px;
+//      height: 30px;
+//      position: absolute;
+//      top: -8px;
+//      left: -28px;
+//     }
+// }
+
 .top-part{
     display: flex;
     flex-direction: row;
@@ -30,8 +46,20 @@ p,h2{
     box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
     // margin-left: -30px;
 }
+.edit-prof{
+    position: absolute;
+    top: 5px;
+    right: 50px;
+   background: transparent;
+   ion-icon{
+    width: 32px;
+    height: 32px;
+    color: white;
+   }
+}
 .right-side{
      width: 70%;
+     position: relative;
     h2{
         font-size: 22px;
         font-weight: bold;
@@ -145,6 +173,22 @@ ion-icon{
 }
 
 .donations-bloodRequests{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 95%;
+    margin: auto;
+    background:white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 20px;
+    margin-top: 15px;
+    p{
+        ion-icon{
+           color: rgb(255, 86, 86);
+        }
+    }
     .sec{
         margin: 0;
         padding: 0;
@@ -154,14 +198,8 @@ ion-icon{
         cursor: pointer;
        
     }
-    background-color: white;
-    border-radius: 15px;
-    margin-top: 10px;
-
-    .donations{
-        border-bottom: 1px solid rgb(172, 170, 170);
-
-    }
+   
+    
 
    
     .don{
@@ -175,5 +213,9 @@ ion-icon{
     .text{
         color: #393636;
         font-size: 15px;
+            display: flex;
+            align-items: center; /* centre le contenu verticalement */
+            cursor: pointer; /* rend le texte cliquable */
+          
     }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Storage } from '@ionic/storage-angular';
 @Component({
   selector: 'app-first-page',
   templateUrl: './first-page.page.html',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstPagePage implements OnInit {
 
-  constructor() { }
+  constructor(private storage:Storage) { }
+  async ngOnInit() {
+    await this.storage.create();
 
-  ngOnInit() {
+    
   }
 
 }

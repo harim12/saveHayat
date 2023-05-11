@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FirstPagePageRoutingModule } from './first-page-routing.module';
+import { EditProfilePageRoutingModule } from './edit-profile-routing.module';
 
-import { FirstPagePage } from './first-page.page';
+import { EditProfilePage } from './edit-profile.page';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
 @NgModule({
@@ -14,9 +14,10 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     CommonModule,
     FormsModule,
     IonicModule,
-    FirstPagePageRoutingModule,
+    EditProfilePageRoutingModule,
     IonicStorageModule.forRoot()
+
   ],
-  declarations: [FirstPagePage]
+  declarations: [EditProfilePage]
 })
-export class FirstPagePageModule {}
+export class EditProfilePageModule {}

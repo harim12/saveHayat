@@ -6,7 +6,14 @@
 
 <ion-content>
   <form [formGroup]="credentials" (ngSubmit) = "register()">
-
+    <ion-item fill="outline" class="ion-margin-bottom">
+      <ion-label position="floating" >First Name</ion-label>
+      <ion-input  color="tertiary" placeholder="Enter your firts name address" type="text" formControlName="firstName" ></ion-input>
+    </ion-item>
+    <ion-item fill="outline" class="ion-margin-bottom">
+      <ion-label position="floating" >Last Name</ion-label>
+      <ion-input  color="tertiary" placeholder="Enter your last name address" type="text" formControlName="lastName" ></ion-input>
+    </ion-item>
     <ion-item fill="outline" class="ion-margin-bottom">
       <ion-label position="floating" >Email address</ion-label>
       <ion-input  color="tertiary" placeholder="Enter your email address" type="email" formControlName="email" ></ion-input>

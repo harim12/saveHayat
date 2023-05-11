@@ -1,12 +1,19 @@
 
 <ion-content>
   <div class="top-part">
+    
       <div class="left-side">
-        <img src="./../../../../assets/images/s-l640.jpg" class="img-profile" alt="#">
+        <ng-container *ngIf="user && user.imageURL">
+          <img [src]="user.imageURL" class="img-profile" alt="#" >
+        </ng-container>
+        <ng-container *ngIf="!user || !user.imageURL">
+          <img src="assets/images/avatar.jpg" class="img-profile" alt="#">
+        </ng-container>  
       </div>
       <div class="right-side">
-        <h2 class="top-text ">Hello Andrew</h2>
+        <h2 class="top-text ">{{user?.firstName}} {{user?.lastName}}</h2>
         <p class="top-text">you have completed 50 days waiting time</p>
+        <button class="edit-prof" routerLink="../../edit-profile"><ion-icon name="create-outline"></ion-icon></button>
       </div>
   </div>
   <div class="middle-part">
@@ -28,7 +35,7 @@
   </div>
   <div class="available">
     <p>I am available to donate</p>
-    <ion-toggle [checked]="true"></ion-toggle><br /><br />
+    <ion-toggle [checked]="true"></ion-toggle><br /><br/>
   </div>
   <!-- <div class="line"></div> -->
   <div class="details">
@@ -39,7 +46,7 @@
       </div>
       <div class="right-side border">
         <p class="p-first">Gender</p>
-        <p>Male</p>
+        <p>{{user?.gender}}</p>
         
       </div>
       <div class="col-sep"></div>
@@ -48,7 +55,7 @@
       </div>
       <div class="right-side">
         <p class="p-first">Blood Group</p>
-        <p>A+ (Positive)</p>
+        <p>{{user?.bloodGroup}}</p>
         
       </div>
     </div>
@@ -59,7 +66,7 @@
       </div>
       <div class="right-side">
         <p class="p-first">Date of Birth</p>
-        <p>05-Juin-1986</p>
+        <p>{{user?.dateBirth}}</p>
         
       </div>
     </div>
@@ -69,7 +76,7 @@
       </div>
       <div class="right-side">
         <p class="p-first">Email</p>
-        <p>AndrewTate@gmail.com</p>
+        <p>{{user?.email}}</p>
         
       </div>
     </div>
@@ -79,7 +86,7 @@
       </div>
       <div class="right-side">
         <p class="p-first">Mobile Number</p>
-        <p>+55234234</p>
+        <p>{{user?.phoneNumber}}</p>
         
       </div>
     </div>
@@ -88,11 +95,16 @@
   </div>
   <div class="donations-bloodRequests" >
     <div class="sec my-donations donations" [routerLink] = "['/my-donations']">
-      <p class="text don">My donations</p>
+      <p class="text don"><ion-icon name="fitness-outline"></ion-icon> My donations</p>
     </div>
     <div class="sec bloodRequests">
-      <p class="text req">My Requests</p>
+      <p class="text req"><ion-icon name="water-outline"></ion-icon> My Requests</p>
     </div>
+    <div class="sec bloodRequests">
+      <p class="text req"  (click)="logout()"><ion-icon name="log-out-outline"></ion-icon> Log out
+      </p>
+    </div>
+
   </div>
-  
+
 </ion-content>

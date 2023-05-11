@@ -1,0 +1,47 @@
+<ion-toolbar>
+  <div class="back-container" >
+    <ion-icon name="arrow-back-outline" class="arrow-back" (click)="goBack()"></ion-icon>
+    <ion-title>Edit Profile</ion-title>
+  </div>
+</ion-toolbar>
+<ion-content>
+
+   <form (ngSubmit)="updateUserData()">
+    <div class="top">
+       <ng-container *ngIf="user && user.imageURL">
+        <img [src]="user.imageURL" class="img-profile" alt="#" >
+      </ng-container>
+      <ng-container *ngIf="!user || !user.imageURL">
+        <img src="assets/images/avatar.jpg" class="img-profile" alt="#">
+      </ng-container>    
+      <h4>{{user?.firstName}} {{user?.lastName}}</h4>
+    </div>
+    <ion-icon name="camera-outline" class="camera-icon" (click)="takePicture()"></ion-icon>
+    <ion-item>
+      <ion-label position="stacked">First Name </ion-label>
+      <ion-input type="text" [(ngModel)]="newName" name="newName" placeholder="{{user?.firstName}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="lastName" name="lastName" placeholder="{{user?.lastName}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Gender</ion-label>
+      <ion-input type="text" [(ngModel)]="gender" name="gender" placeholder="{{user?.gender}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Blood Group</ion-label>
+      <ion-input type="text" [(ngModel)]="newBloodGroup" name="newBloodGroup" placeholder="{{user?.bloodGroup}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Date of Birth</ion-label>
+      <ion-input type="text" [(ngModel)]="dateBirth" name="dateBirth" placeholder="{{user?.dateBirth}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Phone Number</ion-label>
+      <ion-input type="Number" [(ngModel)]="phoneNumber" name="phoneNumber" placeholder="{{user?.phoneNumber}}"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block">Submit</ion-button>
+  </form> 
+  
+</ion-content>
