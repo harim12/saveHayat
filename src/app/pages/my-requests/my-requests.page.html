@@ -2,7 +2,7 @@
   <ion-toolbar>
     <div class="back-container" >
       <ion-icon name="arrow-back-outline" class="arrow-back" routerLink="../tabs/profile"></ion-icon>
-      <ion-title>My donations</ion-title>
+      <ion-title>My Requests</ion-title>
     </div>
   </ion-toolbar>
 
@@ -10,23 +10,28 @@
 
 <ion-content>
   <div class="my-donations">
-    <ion-card *ngFor="let donation of donations">
+    <ion-card *ngFor="let bloodRequest of bloodRequests">
       <ion-card-content>
         <div class="content">
-          <p class="title">Donated  : </p>
+          <p class="title">Blood Request  : </p>
           <div class="donor-infos">
             <ion-icon name="location-outline" class="location-icon"></ion-icon>
-            <span>{{donation.hospitalAdress}} {{donation.hospitalCity}}</span>
+            <span>{{bloodRequest.hospitalAdress}} {{bloodRequest.hospitalCity}}</span>
           </div>
+
           <div class="donor-infos">
             <ion-icon name="calendar-outline" class="location-icon"></ion-icon>
-            <span>{{donation.date}}</span>
+            <span>{{bloodRequest.date}}</span>
+          </div>
+          <div class="donor-infos">
+            <ion-icon name="bag-outline" class="location-icon"></ion-icon>
+            <span>{{bloodRequest.amountOfBlood}} of blood </span>
           </div>
           
         </div>
         <div class="goute">
           <img src="../../../../assets/images/goutte2.png" class="goutte-sang"/>
-        <ion-label class="blood-type">{{donation.bloodGroup}}</ion-label>
+        <ion-label class="blood-type">{{bloodRequest.bloodGroup}}</ion-label>
         </div>
       </ion-card-content>
     </ion-card>

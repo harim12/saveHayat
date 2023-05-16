@@ -2,12 +2,16 @@
     <ion-title>Find Donors</ion-title>
   </ion-toolbar>
 <ion-content>
-  <ion-searchbar animated="true" placeholder="Search"></ion-searchbar>
+  <!-- <ion-searchbar animated="true" placeholder="Search"></ion-searchbar> -->
   <div class="donors-list">
+    
+
+
     <ion-card *ngFor="let donation of donations">
       <ion-card-content>
         <!-- the image is still static I still need to make it dynamic -->
-        <img src="../../../../assets/images/img-test.jpg" class="img-donor"/>
+        <img src="assets/images/avatar.jpg" class="img-donor" alt="#">
+
         <div class="content">
           <h2>{{donation.firstName}} {{donation.lastName}}</h2>
           <div class="donor-infos">
@@ -19,8 +23,12 @@
             <span>{{donation.phoneNumber}}</span>
           </div>
         </div>
-        <img src="../../../../assets/images/goutte2.png" class="goutte-sang"/>
+        
+        <div class="goute">
+          <img src="../../../../assets/images/goutte2.png" class="goutte-sang"/>
         <ion-label class="blood-type">{{donation.bloodGroup}}</ion-label>
+        </div>
+        
       </ion-card-content>
     </ion-card>
       

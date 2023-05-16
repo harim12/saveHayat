@@ -53,7 +53,11 @@ const routes: Routes = [
   {
     path:'notification',
     loadChildren:()=> import('./pages/notifications/notifications.module').then(m=>m.NotificationsPageModule)
+  },  {
+    path: 'my-requests',
+    loadChildren: () => import('./pages/my-requests/my-requests.module').then( m => m.MyRequestsPageModule)
   }
+
 
 
 

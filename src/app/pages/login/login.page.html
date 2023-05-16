@@ -19,37 +19,10 @@
       <ion-input color="black"  type="password" formControlName="password" ></ion-input>
       <ion-note slot="error" *ngIf="(password?.dirty || password?.touched) && password?.errors">password not accepted!</ion-note>
     </ion-item>
-    <p href="#" color="black" class="signuptext">I'm a new user <span class="signup">Sign up?</span></p>
+    <p href="#" color="black" class="signuptext">I'm a new user <span class="signup" routerLink="/register">Sign up?</span></p>
 
     <ion-button expand="full"  type = "submit" class="btn-login" [disabled]="!credentials.valid">Login</ion-button>
   </form>
 </ion-content>
-
-<!-- <div class="container">
-  <img src="../../../assets/images/logo2.png" alt="#" class="logo" >
-     <div class="content">
-      
-    <div class="title">
-      <h2 >Login</h2>
-    </div>
-    <form [formGroup]="credentials" (ngSubmit) = "login()">
-
-      <ion-item fill="outline" class="ion-margin-bottom inputs" >
-        <ion-label position="floating" >Email </ion-label>
-        <ion-input  type="email"  ></ion-input>
-        <ion-note slot="error" *ngIf="(email?.dirty || email?.touched) && email?.errors">Email is not correct!</ion-note>
-      </ion-item>
-      <ion-item fill="outline" class="ion-margin-bottom" >
-        <ion-label position="floating">Password </ion-label>
-        <ion-input color="tertiary"  type="password" formControlName="password" ></ion-input>
-        <ion-note slot="error" *ngIf="(password?.dirty || password?.touched) && password?.errors">password not accepted!</ion-note>
-      </ion-item>
-
-      <ion-button expand="full"  type = "submit" class="btn-login" [disabled]="!credentials.valid">Login</ion-button>
-      
-    </form>
-  </div> 
-</div>
- -->
 
  

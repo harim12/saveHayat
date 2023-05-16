@@ -95,7 +95,7 @@ export class DonatePage implements OnInit {
 
     // pour entrer le format de blood group valid comme A+ ou A-
     bloodGroupValidator(control : FormControl) {
-        const bloodGroupPattern = /^[A-Za-z][+-]$/; // pattern to match a letter followed by '+' or '-'
+        const bloodGroupPattern = /^(A|B|AB|O)[+-]$/;      // pattern to match a letter followed by '+' or '-'
         const valid = bloodGroupPattern.test(control.value); // test if the input matches the pattern
         return valid ? null : {
             invalidBloodGroup: true

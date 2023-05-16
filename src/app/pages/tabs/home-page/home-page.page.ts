@@ -33,7 +33,7 @@ export class HomePagePage {
 
     async ngOnInit() { // Get the user's email when the component initializes
         await this.storage.create();
-        this.userEmail = await this.authService.getUserMail();
+        //this.userEmail = await this.authService.getUserMail();
         // Get the variable from storage
         this.storage.get('email').then((val) => {
             console.log(val)

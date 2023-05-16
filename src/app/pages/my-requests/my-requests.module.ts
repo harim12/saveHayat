@@ -4,10 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MyDonationsPageRoutingModule } from './my-donations-routing.module';
+import { MyRequestsPageRoutingModule } from './my-requests-routing.module';
 
-import { MyDonationsPage } from './my-donations.page';
-
+import { MyRequestsPage } from './my-requests.page';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
 
@@ -16,9 +15,9 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     CommonModule,
     FormsModule,
     IonicModule,
-    MyDonationsPageRoutingModule,
+    MyRequestsPageRoutingModule,
     IonicStorageModule.forRoot()
   ],
-  declarations: [MyDonationsPage]
+  declarations: [MyRequestsPage]
 })
-export class MyDonationsPageModule {}
+export class MyRequestsPageModule {}

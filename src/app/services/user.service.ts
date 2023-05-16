@@ -11,8 +11,7 @@ import { Observable, from, map } from 'rxjs';
 export class UserService {
 
   constructor(private firestore:Firestore) { }
-
-  
+ 
   
   getUserByEmail(userEmail: string): Observable<User> {
     const documentInstance = doc(this.firestore, 'users', userEmail);
@@ -25,6 +24,12 @@ export class UserService {
         }
       })
     );
+  }
+
+  getUserByEmailTeste(userId:string){
+    const collectionInstance = collection(this.firestore, 'users');
+    const q = query(collectionInstance, where('email', '==',userId));
+    return collectionData(q) as Observable<User[]>;
   }
 
 async updateUser(email: string,user:User): Promise<void> {
