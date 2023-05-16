@@ -42,20 +42,6 @@ ion-toolbar{
 
 
 }
-.notification {
-  content: '';
-  display: block;
-  width: 7px;
-  height: 7px;
-  top: -5px;
-  background-color: var(--ion-color-primary);
-  position: absolute;
-  bottom: 5px;
-  right: 12px;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  z-index: 2;
-}
 ion-content {
     --background: #F5F5F5;
   font-family: 'Merriweather Sans',sans-serif;
