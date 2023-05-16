@@ -1,20 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { BloodRequest } from 'src/app/models/bloodRequest.model';
 import { Donation } from 'src/app/models/donation.model';
 import { AuthService } from 'src/app/services/auth.service';
-import { DonationService } from 'src/app/services/donation.service';
+import { BloodRequestService } from 'src/app/services/blood-request.service';
 import { Storage } from '@ionic/storage-angular';
 
+
+
 @Component({
-  selector: 'app-my-donations',
-  templateUrl: './my-donations.page.html',
-  styleUrls: ['./my-donations.page.scss'],
+  selector: 'app-my-requests',
+  templateUrl: './my-requests.page.html',
+  styleUrls: ['./my-requests.page.scss'],
 })
-export class MyDonationsPage implements OnInit {
-  donations:Donation[];
+export class MyRequestsPage implements OnInit {
+
+  bloodRequests:BloodRequest[];
   userEmail: string | null;
 
-  constructor(private donationService:DonationService,private authService:AuthService,private storage:Storage) { }
+  constructor(private bloodRequestService:BloodRequestService,private authService:AuthService,private storage:Storage) { }
 
   async ngOnInit() {
     // Get the user's email when the component initializes
@@ -35,10 +38,10 @@ export class MyDonationsPage implements OnInit {
 
   getMyDonations(){
   console.log("getting donations")
-  this.donationService.getMyDonation(this.userEmail)
-  .subscribe((donations: Donation[]) => {
-    this.donations = donations;
-    console.log(this.donations); // print the result to the console for testing
+  this.bloodRequestService.getMyBloodRequests(this.userEmail)
+  .subscribe((bloodRequests: BloodRequest[]) => {
+    this.bloodRequests = bloodRequests;
+    console.log(this.bloodRequests); // print the result to the console for testing
   });
 }
 }

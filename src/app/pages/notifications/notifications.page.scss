@@ -93,17 +93,23 @@ ion-content {
     }
   }
   
+  .goute{
+    position: relative;
+    
+  }
   .goutte-sang {
-    width: 55px;
+    width: 60px;
     height: 55px;
-    transform: translate(10%, 30%);
+    
+    // transform: translate(10%, 30%);
   }
   
   .blood-type {
     position: absolute;
-    top: 40px;
+    top: 7px;
+    right: 26px;
     transform: translate(50%, 50%);
-    right: 33px;
+    // right: 33px;
     z-index: 10;
     font-size: 15px;
     font-weight: 700;

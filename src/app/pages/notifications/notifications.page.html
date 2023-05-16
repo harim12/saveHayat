@@ -13,7 +13,8 @@
     <ion-card *ngFor="let donation of donatedToMe">
       <ion-card-content>
         <!-- the image is still static I still need to make it dynamic -->
-        <img src="../../../../assets/images/img-test.jpg" class="img-donor" />
+        <img src="assets/images/avatar.jpg" class="img-donor" alt="#">
+
         <div class="content">
           <h2>{{donation.firstName}} {{donation.lastName}}</h2>
           <div class="donor-infos">
@@ -25,11 +26,14 @@
             <span>{{donation.phoneNumber}}</span>
           </div>
         </div>
-        <img src="../../../../assets/images/goutte2.png" class="goutte-sang" />
+        
+        <div class="goute">
+          <img src="../../../../assets/images/goutte2.png" class="goutte-sang"/>
         <ion-label class="blood-type">{{donation.bloodGroup}}</ion-label>
+        </div>
         
       </ion-card-content>
-      <ion-button class="acceptBtn" (click) = "acceptDonation(donation.id,donation.donateTo)">Accept </ion-button>
+      <ion-button class="acceptBtn" (click) = "acceptDonation(donation.id,donation.donateTo)"><ion-icon name="checkmark-outline"></ion-icon> </ion-button>
     </ion-card>
 
   </div>

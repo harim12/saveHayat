@@ -12,26 +12,26 @@
       </div>
       <div class="right-side">
         <h2 class="top-text ">{{user?.firstName}} {{user?.lastName}}</h2>
-        <p class="top-text">you have completed 50 days waiting time</p>
+        <!-- <p class="top-text">you have completed 50 days waiting time</p> -->
         <button class="edit-prof" routerLink="../../edit-profile"><ion-icon name="create-outline"></ion-icon></button>
       </div>
   </div>
   <div class="middle-part">
     <div class="col first">
       <img src="./../../../../assets/images/second.png" class="img-middle" alt="#">
-      <p class="number">3</p>
-      <p>Life saved</p>
+      <p class="number">{{bloodRequestsLength}}</p>
+      <p>blood ordered</p>
     </div>
     <div class="col second">
       <img src="./../../../../assets/images/first.png" class="img-middle blood" alt="#">
-      <p class="number">3</p>
+      <p class="number">{{donationsLength}}</p>
       <p>Life saved</p>
     </div>
-    <div class="col third">
+    <!-- <div class="col third">
       <img src="./../../../../assets/images/hadn_clapping.png" class="img-middle hands" alt="#">
       <p class="number">3</p>
       <p>Life saved</p>
-    </div>
+    </div> -->
   </div>
   <div class="available">
     <p>I am available to donate</p>
@@ -97,7 +97,7 @@
     <div class="sec my-donations donations" [routerLink] = "['/my-donations']">
       <p class="text don"><ion-icon name="fitness-outline"></ion-icon> My donations</p>
     </div>
-    <div class="sec bloodRequests">
+    <div class="sec bloodRequests" [routerLink] = "['/my-requests']">
       <p class="text req"><ion-icon name="water-outline"></ion-icon> My Requests</p>
     </div>
     <div class="sec bloodRequests">

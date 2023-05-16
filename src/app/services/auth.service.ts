@@ -70,7 +70,7 @@ export class AuthService {
     catch(e){
       return null;
     }
-  }s
+  }
   logout(){
     return this.auth.signOut().then(() => {
       this.router.navigate(['/']); // Rediriger vers la page d'accueil

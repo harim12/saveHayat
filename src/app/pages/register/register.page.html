@@ -1,30 +1,32 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
+
+<ion-content class="ion-padding ion-text-center container">
+  <img src="../../../assets/images/logo2.png" alt="#" class="logo">
+  <div class="title">
+    <h2 color="white">Register Now</h2>
+    <p>Please enter the details below to continue</p>
+  </div>
   <form [formGroup]="credentials" (ngSubmit) = "register()">
     <ion-item fill="outline" class="ion-margin-bottom">
       <ion-label position="floating" >First Name</ion-label>
-      <ion-input  color="tertiary" placeholder="Enter your firts name address" type="text" formControlName="firstName" ></ion-input>
+      <ion-input  type="text" formControlName="firstName" ></ion-input>
     </ion-item>
     <ion-item fill="outline" class="ion-margin-bottom">
       <ion-label position="floating" >Last Name</ion-label>
-      <ion-input  color="tertiary" placeholder="Enter your last name address" type="text" formControlName="lastName" ></ion-input>
+      <ion-input    type="text" formControlName="lastName" ></ion-input>
     </ion-item>
     <ion-item fill="outline" class="ion-margin-bottom">
       <ion-label position="floating" >Email address</ion-label>
-      <ion-input  color="tertiary" placeholder="Enter your email address" type="email" formControlName="email" ></ion-input>
+      <ion-input  type="email" formControlName="email" ></ion-input>
       <ion-note slot="error" *ngIf="(email?.dirty || email?.touched) && email?.errors">Email is not correct!</ion-note>
     </ion-item>
     <ion-item fill="outline" class="ion-margin-bottom" >
       <ion-label position="floating">Password </ion-label>
-      <ion-input color="tertiary" placeholder="enter your password" type="password" formControlName="password" ></ion-input>
+      <ion-input type="password" formControlName="password" ></ion-input>
       <ion-note slot="error" *ngIf="(password?.dirty || password?.touched) && password?.errors">password not accepted!</ion-note>
     </ion-item>
+    <p href="#" color="black" class="signuptext">Already have an account <span class="signup" routerLink="/login"> Login?</span></p>
 
-    <ion-button expand="full"  type = "button" (click)="register()">Create account</ion-button>
+    <ion-button expand="full"  type = "button" class="btn-login"  (click)="register()" [disabled]="!credentials.valid">Create account</ion-button>
   </form>
 </ion-content>
