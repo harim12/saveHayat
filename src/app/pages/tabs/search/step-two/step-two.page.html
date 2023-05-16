@@ -1,0 +1,67 @@
+<ion-toolbar>
+  <ion-title>Chronic diseases and infections</ion-title>
+</ion-toolbar>
+<ion-content>
+<form  >
+  <div class="critere">
+    <label >DISEASES, SEXUALLY TRANSMITTED INFECTIONS (STIs), AND HEPATITIS <ion-icon name="alert-circle"></ion-icon></label>
+    <span>Have you tested positive for HIV/AIDS, HBV (Hepatitis B), HCV (Hepatitis C), or syphilis?</span>
+    <div class="age">
+      <span *ngFor="let answer of answers"
+            [ngClass]="{ 'selected': answer === diseaseSelected }"
+            (click)="diseaseAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  <div class="critere">
+    <label >CANCER <ion-icon name="alert-circle"></ion-icon></label>
+    <span>Have you had cancer at any point in your life?</span>
+    <div class="age">
+      <span *ngFor="let answer of answers"
+            [ngClass]="{ 'selected': answer === answerCancSelected }"
+            (click)="selectAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  <div class="critere">
+    <label>CHRONIC ILLNESSES <ion-icon name="alert-circle"></ion-icon></label>
+    <span>Are you being treated for a chronic illness such as diabetes (treated with insulin), inflammatory bowel disease, autoimmune disease...?</span>
+    <div class="age">
+      <span *ngFor="let answer of answers"
+            [ngClass]="{ 'selected': answer === chronicSelected }"
+            (click)="chronicAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  <div class="critere">
+    <label >AVC <ion-icon name="alert-circle"></ion-icon></label>
+    <span>Have you experienced any chest pain or unusual shortness of breath following exertion in the past few weeks?</span>
+    <div class="age">
+      <span *ngFor="let answer of answers"
+            [ngClass]="{ 'selected': answer === avcSelected }"
+            (click)="selectAvcAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  <div class="critere">
+    <label >TRANSFUSION <ion-icon name="alert-circle"></ion-icon></label>
+    <span>Have you ever had a blood transfusion (red blood cells) or an organ transplant?</span>
+    <div class="age">
+      <span *ngFor="let answer of answers"
+            [ngClass]="{ 'selected': answer === transfusionSelected }"
+            (click)="selectTransAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  <div class="btns">
+  <ion-button type="submit"  [routerLink]="'../step-one'" class="prev-btn">Previous</ion-button>
+  <ion-button type="submit" [disabled]="!allInformationFilled()" [ngStyle]="{ 'cursor': allInformationFilled() ? 'pointer' : 'forbidden' }" [routerLink]="'../step-three'" (click)="sendData()">Next</ion-button>
+  </div>
+</form>
+
+</ion-content>

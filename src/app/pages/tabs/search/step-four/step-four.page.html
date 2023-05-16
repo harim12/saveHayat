@@ -1,0 +1,47 @@
+<ion-toolbar>
+  <ion-title>Lifestyle</ion-title>
+</ion-toolbar>
+<ion-content>
+<form  >
+  <div class="critere">
+    <label > PREGNANCY <ion-icon name="alert-circle"></ion-icon></label>
+    <span>Are you pregnant or have you given birth within the last 6 months?</span>
+    <div class="answer">
+      <span *ngFor="let answer of answers"
+            [ngClass]="{ 'selected': answer === pregnSelected }"
+            (click)="PregnancyAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  <div class="critere">
+    <label >ANEMIA <ion-icon name="alert-circle"></ion-icon></label>
+    <span>Are you being followed by your doctor for anemia (low hemoglobin levels) or iron deficiency?</span>
+    <div class="answer">
+      <span *ngFor="let answer of answers"
+            [ngClass]="{ 'selected': answer === anemiaSelected }"
+            (click)="anemiaAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  <div class="critere">
+    <label >OPERATIONS <ion-icon name="alert-circle"></ion-icon></label>
+    <span>Have you had surgery in the last 4 months?</span>
+    <div class="answer">
+      <span *ngFor="let answer of answers"
+            [ngClass]="{ 'selected': answer === operationSelected }"
+            (click)="operationAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  
+ 
+  <div class="btns">
+  <ion-button type="submit"  [routerLink]="'../step-three'" class="prev-btn">Previous</ion-button>
+  <ion-button type="submit" [disabled]="!allInformationFilled()" [ngStyle]="{ 'cursor': allInformationFilled() ? 'pointer' : 'forbidden' }" [routerLink]="'../step-five'" (click)="sendData()">Next</ion-button>
+  </div>
+</form>
+
+</ion-content>

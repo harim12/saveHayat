@@ -1,7 +1,29 @@
+<ion-toolbar>
+  <ion-title>Can I donate?</ion-title>
+</ion-toolbar>
 <ion-content>
-  <div class="top-section">
-    <h2 class="title">Nearby</h2>
-    <ion-searchbar animated="true" class="search" placeholder="Search"></ion-searchbar>
-  </div>
-  
+  <ion-tabs>
+    <ion-tab-bar slot="top">
+      <ion-tab-button tab="step-one" [ngClass]="{ 'checked': checked }">
+        <span>1</span>
+      </ion-tab-button>
+      <ion-tab-button tab="step-two" [ngClass]="{ 'checked': checkedTwo }">
+        <span>2</span>
+          </ion-tab-button>
+      <ion-tab-button tab="step-three" [ngClass]="{ 'checked': checkedThree }">
+        <span>3</span>
+      </ion-tab-button>
+      <ion-tab-button tab="step-four" [ngClass]="{ 'checked': checkedFour }">
+        <span>4</span>
+        
+      </ion-tab-button>
+      <ion-tab-button tab="step-five" [ngClass]="{ 'checked': checkedFive }">
+        <span>5</span>
+      
+      </ion-tab-button>
+      <ion-tab-button tab="step-six">
+        <span>6</span>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>

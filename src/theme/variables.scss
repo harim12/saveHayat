@@ -241,3 +241,21 @@
     --ion-card-background: #1e1e1e;
   }
 }
+
+.alert-title.sc-ion-alert-md{
+  color:red !important;
+  font-family: 'Merriweather Sans', sans-serif;
+
+}
+.alert-button-inner.sc-ion-alert-md{
+  background-color: red;
+  color: white;
+  font-family: 'Merriweather Sans', sans-serif;
+  padding: 8px  20px;
+  text-align: center;
+  border-radius: 10px;
+}
+.alert-message.sc-ion-alert-md{
+  font-family: 'Merriweather Sans', sans-serif;
+
+}

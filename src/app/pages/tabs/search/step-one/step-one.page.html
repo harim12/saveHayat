@@ -1,0 +1,53 @@
+  <ion-toolbar>
+    <ion-title>Primary criteria</ion-title>
+  </ion-toolbar>
+<ion-content>
+  <form  >
+    <div class="critere">
+      <label >GENDER <ion-icon name="alert-circle"></ion-icon></label>
+      <span>Are you a male or female ?</span>
+      <div class="gender">
+        <span *ngFor="let gender of genders"
+              [ngClass]="{ 'selected': gender === genderSelected }"
+              (click)="selectGender(gender)">
+          {{ gender }}
+        </span>
+      </div>
+    </div>
+    <div class="critere">
+      <label >AGE <ion-icon name="alert-circle"></ion-icon></label>
+      <span>How old are you ?</span>
+      <div class="age">
+        <span *ngFor="let age of ages"
+              [ngClass]="{ 'selected': age === ageSelected }"
+              (click)="selectAge(age)">
+          {{ age }}
+        </span>
+      </div>
+    </div>
+    <div class="critere">
+      <label >WEIGHT <ion-icon name="alert-circle"></ion-icon></label>
+      <span>What is your weight?</span>
+      <div class="age">
+        <span *ngFor="let weight of weights"
+              [ngClass]="{ 'selected': weight === weightSelected }"
+              (click)="selectWeight(weight)">
+          {{ weight }}
+        </span>
+      </div>
+    </div>
+    <div class="critere">
+      <label >DONATION HISTORY <ion-icon name="alert-circle"></ion-icon></label>
+      <span>Your last donation was less than 8 weeks ago.</span>
+      <div class="age">
+        <span *ngFor="let answer of answers"
+              [ngClass]="{ 'selected': answer === historySelected }"
+              (click)="selectAnswer(answer)">
+          {{ answer }}
+        </span>
+      </div>
+    </div>
+    <ion-button type="submit" [disabled]="!allInformationFilled()" [ngStyle]="{ 'cursor': allInformationFilled() ? 'pointer' : 'forbidden' }" [routerLink]="'../step-two'" (click)="sendData()">Next</ion-button>
+  </form>
+  
+</ion-content>

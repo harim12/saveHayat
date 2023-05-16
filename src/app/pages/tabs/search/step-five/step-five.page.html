@@ -1,0 +1,47 @@
+<ion-toolbar>
+  <ion-title>Last Checks</ion-title>
+</ion-toolbar>
+<ion-content>
+<form  >
+  <div class="critere">
+    <label > FEVER <ion-icon name="alert-circle"></ion-icon></label>
+    <span>Have you had a fever or an infection (cough, diarrhea, urinary tract infection...) in the past 2 weeks?</span>
+    <div class="answer">
+      <span *ngFor="let answer of answers"
+            [ngClass]="{ 'selected': answer === feverSelected }"
+            (click)="feverAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  <div class="critere">
+    <label >DENTAL CARE <ion-icon name="alert-circle"></ion-icon></label>
+    <span>Have you had any dental treatment within the past 24 hours (filling, cleaning), root canal treatment, or tooth extraction within the past week?</span>
+    <div class="answer">
+      <span *ngFor="let answer of answers"
+            [ngClass]="{ 'selected': answer === dentalSelected }"
+            (click)="dentalAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  <div class="critere">
+    <label >MEDICATION <ion-icon name="alert-circle"></ion-icon></label>
+    <span>Are you taking any medications, even on a daily basis?</span>
+    <div class="answer">
+      <span *ngFor="let answer of answers"
+            [ngClass]="{ 'selected': answer === medicationSelected }"
+            (click)="medicationAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  
+ 
+  <div class="btns">
+  <ion-button type="submit"  [routerLink]="'../step-four'" class="prev-btn">Previous</ion-button>
+  <ion-button type="submit" [disabled]="!allInformationFilled()" [ngStyle]="{ 'cursor': allInformationFilled() ? 'pointer' : 'forbidden' }" [routerLink]="'../step-six'" (click)="sendData()">Next</ion-button>
+  </div>
+</form>
+
+</ion-content>

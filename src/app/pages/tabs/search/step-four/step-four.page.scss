@@ -1,0 +1,77 @@
+ion-toolbar {
+    font-family: 'Merriweather Sans', sans-serif;
+    --background: #F5F5F5;
+  margin-top: 15px;
+    ion-title {
+      font-weight: 700;
+      color: rgb(6, 5, 7);
+    }
+}
+.critere{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 8px;
+    margin-right: 5px;
+    span,label{
+        font-family: 'Merriweather Sans', sans-serif;
+    }
+    label{
+        font-weight: 600;
+        display: inline-block;
+  vertical-align: middle;
+    }
+    span{
+        color: rgb(68, 68, 68);
+    }
+}
+.answer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    span {
+        padding: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        background: rgb(211, 211, 211);                
+        border-radius: 5px;
+        text-align: center;
+        margin-left: 8px;
+        width: 50%;
+        font-family: 'Merriweather Sans', sans-serif;
+    }
+    
+    span.selected {
+        background-color: var(--ion-color-primary);
+        color: white;
+    }
+}
+
+.answer{
+    span{
+        font-size: 15px;
+    }
+}
+
+.btns{
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Merriweather Sans', sans-serif;
+    
+}
+.prev-btn{
+        --color:var(--ion-color-primary);
+        --background:white;
+        border-color:var(--ion-color-primary);
+        font-family: 'Merriweather Sans', sans-serif;
+
+}
+ion-icon{
+    width: 21px;
+    height: 21px;
+}

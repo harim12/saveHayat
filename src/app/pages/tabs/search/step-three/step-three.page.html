@@ -1,0 +1,47 @@
+<ion-toolbar>
+  <ion-title>Lifestyle</ion-title>
+</ion-toolbar>
+<ion-content>
+<form  >
+  <div class="critere">
+    <label > SUBSTANCE ABUSE <ion-icon name="alert-circle"></ion-icon></label>
+    <span>Have you ever used illicit drugs and/or performance-enhancing substances intravenously?</span>
+    <div class="age">
+      <span *ngFor="let answer of answers"
+            [ngClass]="{ 'selected': answer === abuseSelected }"
+            (click)="abuseAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  <div class="critere">
+    <label >TATTOOS AND PIERCINGS <ion-icon name="alert-circle"></ion-icon></label>
+    <span>Have you had a tattoo or piercing (including ears) in the last 4 months?</span>
+    <div class="age">
+      <span *ngFor="let answer of answers"
+            [ngClass]="{ 'selected': answer === tattoSelected }"
+            (click)="tattoAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  <div class="critere">
+    <label >SEXUAL LIFE <ion-icon name="alert-circle"></ion-icon></label>
+    <span>How many sexual partners have you had in the last 4 months?</span>
+    <div class="age">
+      <span *ngFor="let answer of numbers"
+            [ngClass]="{ 'selected': answer === manySelected }"
+            (click)="howManyAnswer(answer)">
+        {{ answer }}
+      </span>
+    </div>
+  </div>
+  
+ 
+  <div class="btns">
+  <ion-button type="submit"  [routerLink]="'../step-two'" class="prev-btn">Previous</ion-button>
+  <ion-button type="submit" [disabled]="!allInformationFilled()" [ngStyle]="{ 'cursor': allInformationFilled() ? 'pointer' : 'forbidden' }" [routerLink]="'../step-four'" (click)="sendData()">Next</ion-button>
+  </div>
+</form>
+
+</ion-content>
