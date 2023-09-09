@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ProfilePageRoutingModule } from './profile-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ProfilePage } from './profile.page';
 import { IonicStorageModule } from '@ionic/storage-angular';
@@ -15,6 +16,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     FormsModule,
     IonicModule,
     ProfilePageRoutingModule,
+    HttpClientModule,
     IonicStorageModule.forRoot()
 
   ],

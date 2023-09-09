@@ -3,11 +3,13 @@ import {User} from 'src/app/models/user.model';
 import {AuthService} from 'src/app/services/auth.service';
 import {UserService} from 'src/app/services/user.service';
 import {Storage} from '@ionic/storage-angular';
-import {MenuController} from '@ionic/angular';
+import {MenuController, NavController} from '@ionic/angular';
 import {BloodRequestService} from 'src/app/services/blood-request.service';
 import {BloodRequest} from 'src/app/models/bloodRequest.model';
 import {Donation} from 'src/app/models/donation.model';
 import { DonationService } from 'src/app/services/donation.service';
+import { HttpClient } from '@angular/common/http';
+import { tap } from 'rxjs';
 
 
 @Component({selector: 'app-profile', templateUrl: './profile.page.html', styleUrls: ['./profile.page.scss']})
@@ -25,6 +27,8 @@ export class ProfilePage implements OnInit {
               private authService : AuthService, 
               private storage : Storage,
               private bloodRequestService : BloodRequestService,
+              private nav: NavController,
+              private http: HttpClient,
               private donationService:DonationService) {}
 
     async ngOnInit() {
@@ -70,7 +74,17 @@ export class ProfilePage implements OnInit {
       });
    
 }
-    logout() {
-      this.authService.logout();
-    }
+logout() {
+    // Clear the cache by appending a timestamp to the URL of any HTTP requests
+    const timestamp = Date.now();
+    this.http.get(`http://localhost:8100?timestamp=${timestamp}`)
+      .pipe(
+        // Navigate to the login page after the cache has been cleared
+        tap(() => this.nav.navigateRoot('/login'))
+      )
+      .subscribe();
+  
+    // Log the user out using the AuthService
+    this.authService.logout();
+  }
 }

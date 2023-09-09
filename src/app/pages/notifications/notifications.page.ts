@@ -50,6 +50,7 @@ export class NotificationsPage implements OnInit {
   
           console.log('donations made to me:', this.donatedToMe);
       });
+      
   }
   acceptDonation(donationId:string,donateTo:string){
     //here I delete it from the donation collection in firebase
