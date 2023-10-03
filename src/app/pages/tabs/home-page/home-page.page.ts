@@ -43,7 +43,7 @@ export class HomePagePage {
 
     // ===============FIND BLOOD REQUESTS IN THE SAME CITY===================
     getBloodRequests() {
-        const city = 'oujda'; // replace with desired city
+        const city = 'Oujda'; // replace with desired city
 
         this.bloodRequestService.getBloodRequests(city).subscribe((bloodRequests : BloodRequest[]) => {
             this.bloodRequests = bloodRequests;     
