@@ -21,7 +21,7 @@ export class BloodRequestService {
   //================================= GET BLOOD REQUEST===============================================
    getBloodRequests(city: string): Observable<BloodRequest[]> {
     const collectionInstance = collection(this.firestore, 'bloodRequests');
-    const q = query(collectionInstance, where('hospitalCity', '==',city));
+    const q = query(collectionInstance, where('hospitalCity', '==',"Oujda"));
     return collectionData(q) as Observable<BloodRequest[]>;
   }
     //================================= GET MY BLOOD REQUESTS ===============================================
