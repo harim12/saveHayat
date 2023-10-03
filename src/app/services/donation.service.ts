@@ -21,7 +21,7 @@ export class DonationService {
   //================================= FIND DONORS ===============================================
    findDonors(city: string): Observable<Donation[]> {
     const collectionInstance = collection(this.firestore, 'donations');
-    const q = query(collectionInstance, where('hospitalCity', '==',city), where('donateTo', '==', ''));
+    const q = query(collectionInstance, where('hospitalCity', '==',"Oujda"), where('donateTo', '==', ''));
     return collectionData(q) as Observable<Donation[]>;
   }
     //================================= GET MY DONATIONS ===============================================
